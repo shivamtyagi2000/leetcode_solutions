@@ -9,7 +9,7 @@ public:
         return y-1;
         */
         //better apporach
-            long long s=0,e=INT_MAX,ans;
+            long long s=0,e=x,ans;
         while(s<=e)
         {
             long long mid=(s+e)/2;
