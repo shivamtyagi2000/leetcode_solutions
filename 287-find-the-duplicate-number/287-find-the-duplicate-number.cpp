@@ -8,6 +8,8 @@ public:
             if(nums[i]==nums[i+1])
                 break;
         return nums[i];*/
+        
+        /* extra space
         vector<int> ans(nums.size()+1,0);
         int temp;
         for(int i=0;i<nums.size();i++){
@@ -17,8 +19,10 @@ public:
                break;
         }
         return temp;
+        */
         
-      /*  int slow,fast;
+        // BEST approach
+        int slow,fast;
         slow=fast=nums[0];
         do{
             slow=nums[slow];
@@ -29,6 +33,6 @@ public:
             slow=nums[slow];
             fast=nums[fast];
         }
-        return slow;*/
+        return slow;
     }
 };
