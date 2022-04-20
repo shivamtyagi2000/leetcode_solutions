@@ -11,6 +11,8 @@ public:
     }
     int uniquePaths(int m, int n) {
         return count(0,0,m-1,n-1);*/
+    /* DYNAMIC PROGRAMMING
+    
      int countPaths(int i,int j,int n,int m,vector<vector<int>> &dp)
     {
         if(i==(n-1)&&j==(m-1)) return 1;
@@ -27,6 +29,16 @@ public:
         if(m==1&&n==1)
             return num;
         return dp[0][0];
+    }
+    */
+    int uniquePaths(int m, int n) {
+            int N = n + m - 2;
+            int r = m - 1; 
+            double res = 1;
+            
+            for (int i = 1; i <= r; i++)
+                res = res * (N - r + i) / i;
+            return (int)res;
     }
         
     
