@@ -11,7 +11,7 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        ListNode *m;
+   /*     ListNode *m;
         if(head){
             int count=0;
             ListNode *temp=head;
@@ -25,6 +25,15 @@ public:
                 head=head->next;
             }
         }
-        return head;
+        return head;*/
+        
+        //Better apparoch
+        ListNode *slow,*fast;
+        slow=fast=head;
+        while(fast&&fast->next){
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        return slow;
     }
 };
