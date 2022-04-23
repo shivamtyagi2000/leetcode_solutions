@@ -22,7 +22,7 @@ public:
         */
         
         // BEST approach
-        int slow,fast;
+     /*   int slow,fast;
         slow=fast=nums[0];
         do{
             slow=nums[slow];
@@ -33,6 +33,18 @@ public:
             slow=nums[slow];
             fast=nums[fast];
         }
-        return slow;
+        return slow;*/
+        int slow,fast;
+        slow=fast=nums[0];
+        do{
+            slow=nums[slow];
+            fast=nums[nums[fast]];
+        }while(slow!=fast);
+    fast=nums[0];
+    while(slow!=fast){
+        slow=nums[slow];
+        fast=nums[fast];
+        
+    }return slow;
     }
 };
