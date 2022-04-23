@@ -32,7 +32,7 @@ public:
         }*/
         
         //best approch
-        int low=0,mid=0,end=nums.size()-1;
+       /* int low=0,mid=0,end=nums.size()-1;
         while(mid<=end){
             switch(nums[mid]){
                 case 0 :
@@ -44,6 +44,30 @@ public:
                 case 2:
                     swap(nums[mid],nums[end--]);
                     break;
+            }
+        }*/
+        int low,mid,end;
+        low=mid=0;
+        end=nums.size()-1;
+        while(mid<=end){
+            switch(nums[mid]){
+                case 0:
+                    {
+                        swap(nums[low],nums[mid]);
+                        mid++;
+                        low++;
+                        break;
+                    }
+                case 1:
+                    {
+                        mid++;
+                        break;
+                    }
+                case 2:
+                    {
+                        swap(nums[end],nums[mid]);
+                        end--;
+                    }
             }
         }
     }
