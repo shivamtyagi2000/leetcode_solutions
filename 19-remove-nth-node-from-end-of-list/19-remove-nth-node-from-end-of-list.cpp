@@ -17,7 +17,7 @@ public:
         }
         if(current==NULL)
             return temp->next;
-        while(current->next!=NULL){
+        while(current->next){
             current=current->next;
             temp=temp->next;
         }
