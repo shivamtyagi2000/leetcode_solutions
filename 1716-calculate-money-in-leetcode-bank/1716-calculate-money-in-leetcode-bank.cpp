@@ -1,7 +1,7 @@
 class Solution {
 public:
     int totalMoney(int n) {
-        int count=0,j=1,i=0;
+        int count=0,j,i;
         for(i=0;i<n/7;i++){
             for(j=i+1;j<=7+i;j++)
                 count+=j;
