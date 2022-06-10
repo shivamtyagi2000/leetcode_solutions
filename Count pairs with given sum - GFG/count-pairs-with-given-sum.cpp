@@ -14,7 +14,7 @@ public:
         unordered_map<int,int> hash;
         int count=0;
         for(int i=0;i<n;i++){
-            if(hash.find(k-arr[i])!=hash.end())
+            if(hash[k-arr[i]])
                 count+=hash[k-arr[i]];
             hash[arr[i]]+=1;
         }
