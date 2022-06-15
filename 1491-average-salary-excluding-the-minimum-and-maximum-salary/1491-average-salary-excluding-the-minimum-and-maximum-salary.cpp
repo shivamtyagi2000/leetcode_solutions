@@ -1,20 +1,18 @@
 class Solution {
 public:
     double average(vector<int>& salary) {
-        double temp=0;
-        int s=0;
-        int max=INT_MIN,min=INT_MAX;
-        for(int i=0;i<salary.size();i++){
-            if(salary[i]>max)
-                max=salary[i];
-            if(salary[i]<min)
-                min=salary[i];
-            temp+=salary[i];
-            s++;
+        double sum=0;
+        int ma=INT_MIN,mi=INT_MAX;
+        for(int i=0;i<salary.size();i++)
+        {
+            sum+=salary[i];
+            if(salary[i]>ma)
+                ma=salary[i];
+            if(salary[i]<mi)
+                mi=salary[i];
         }
-        temp=temp-max-min;
-        s=s-2;
-        temp=temp/s;
-        return temp;
+        sum=sum-ma-mi;
+        sum/=salary.size()-2;
+        return sum;
     }
 };
