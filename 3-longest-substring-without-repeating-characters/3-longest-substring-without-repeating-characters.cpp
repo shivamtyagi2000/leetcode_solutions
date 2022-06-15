@@ -2,6 +2,7 @@ class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
         int ans=0,len=s.size(),left=0,right=0;
+        string temp="";
         int chars[128]={0};
         while(right<len){
             chars[s[right]]++;
@@ -11,8 +12,10 @@ public:
                 left++;
             }
             ans=max(ans,right-left+1);
+            temp=s.substr(left,ans);
             right++;
         }
+        cout<<temp;
         return ans;
     }
 };
