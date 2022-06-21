@@ -12,10 +12,8 @@ public:
                 left++;
             }
             ans=max(ans,right-left+1);
-            temp=s.substr(left,ans);
             right++;
         }
-        cout<<temp;
         return ans;
     }
 };
