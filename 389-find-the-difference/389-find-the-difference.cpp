@@ -1,17 +1,16 @@
 class Solution {
 public:
     char findTheDifference(string s, string t) {
-        vector<int> shash(26,0);
-        vector<int> thash(26,0);
-        char ch;
+     vector<int> temp(26,0);
+        char x;
         for(int i=0;i<s.size();i++)
-            shash[s[i]-'a']+=1;
-         for(int i=0;i<t.size();i++)
-            thash[t[i]-'a']+=1;
-        for(int i=0;i<26;i++){
-            if(shash[i]!=thash[i])
-             ch=i+'a';
+            temp[s[i]-'a']+=1;
+        for(int i=0;i<t.size();i++)
+        {
+            temp[t[i]-'a']-=1;
+            if(temp[t[i]-'a']<0)
+                x=t[i];
         }
-        return ch;
+        return x;
     }
 };
