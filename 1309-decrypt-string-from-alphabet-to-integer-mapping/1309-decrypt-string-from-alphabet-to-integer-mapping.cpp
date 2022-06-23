@@ -1,18 +1,16 @@
 class Solution {
 public:
     string freqAlphabets(string s) {
-		int n = s.length(), i = 0;
-        string ans = "";
-        while(i < n){
-            if(i + 2 < n && s[i + 2] == '#') {
-                ans+='a'+(s[i]-'0')*10 + (s[i+1]-'0')-1;
-                i += 3;
-            }
-            else {
-                ans += char(s[i]-'0'-1+'a');
-                i++;
-            }
-    }
+        string ans="";
+        int i=0;
+        while(i<s.size()){
+            if(i+2<s.size()&&s[i+2]=='#'){
+                ans+=((s[i]-'0')*10+s[i+1]-'0'+'a'-1);
+                i+=3;}
+                else
+                    ans+=(s[i++]-'1'+'a');
+            
+        }
         return ans;
     }
 };
