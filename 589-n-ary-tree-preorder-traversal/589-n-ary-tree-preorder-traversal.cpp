@@ -20,17 +20,16 @@ public:
 
 class Solution {
 public:
-    void f(Node* root,vector<int> &ans){
-    ans.push_back(root->val);
-    for(int i=0;i<root->children.size();i++){
-        f(root->children[i],ans);
-    }
-}
-    vector<int> preorder(Node* root) {
-        vector<int> ans;
-        if(root!=NULL)
-        f(root,ans);
+    vector<int> f(Node *root,vector<int> &ans){
+        if(!root)
+            return ans;
+        ans.push_back(root->val);
+        for(int i=0;i<root->children.size();i++)
+            ans=f(root->children[i],ans);
         return ans;
     }
-    
+    vector<int> preorder(Node* root) {
+        vector<int> ans;
+        return f(root,ans);
+    }
 };
