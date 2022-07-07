@@ -14,11 +14,12 @@ class Solution{
   public:
     int MissingNumber(vector<int>& array, int n) {
         // Your code goes here
-       sort(array.begin(),array.end());
-       for(int i=0;i<n;i++){
-           if(array[i]!=i+1)
-           return i+1;
-       }
+        int res=0;
+        for(int i=1;i<=n;i++)
+        res^=i;
+        for(int i=0;i<array.size();i++)
+        res^=array[i];
+        return res;
     }
 };
 
