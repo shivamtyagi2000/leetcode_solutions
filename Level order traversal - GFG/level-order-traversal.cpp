@@ -47,17 +47,13 @@ class Solution
       //Your code here
       queue<Node *> q;
       vector<int> ans;
-      if(!node)
-      return ans;
       q.push(node);
       while(!q.empty()){
-          node=q.front();
-          ans.push_back(node->data);
+          Node *temp=q.front();
           q.pop();
-          if(node->left)
-          q.push(node->left);
-          if(node->right)
-          q.push(node->right);
+          ans.push_back(temp->data);
+          if(temp->left)q.push(temp->left);
+          if(temp->right)q.push(temp->right);
       }
       return ans;
     }
